@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Marvel</string>
+    <string name="offline_alert">Não foi possível realizar a busca. Verifique sua conexão e clique na tela para tentar novamente.</string>
+    <string name="font_family">sans-serif-light</string>
+</resources>
