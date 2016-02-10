@@ -12,9 +12,8 @@ import br.com.fearaujo.marvel.util.Constants;
 @Rest(rootUrl = Constants.URL, converters = {GsonHttpMessageConverter.class})
 public interface ICommunicationService {
 
-    @Get("")
+    @Get(Constants.END_POINT)
     @Accept(MediaType.APPLICATION_JSON)
-    Response getComics();
-
+    Response getComics(String apiKey, String hash);
 
 }

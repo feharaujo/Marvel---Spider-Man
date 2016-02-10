@@ -1,6 +1,10 @@
 package br.com.fearaujo.marvel.view.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,15 +17,18 @@ import java.util.List;
 import br.com.fearaujo.marvel.R;
 import br.com.fearaujo.marvel.model.Result;
 import br.com.fearaujo.marvel.service.IImageLoader;
+import br.com.fearaujo.marvel.view.activity.DetailsActivity_;
 
 public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.ViewHolder>{
 
     private List<Result> results;
     private IImageLoader imageLoader;
+    private Activity context;
 
     public ComicsAdapter(List<Result> results, Activity context, IImageLoader imageLoader){
         this.results = results;
         this.imageLoader = imageLoader;
+        this.context = context;
 
         notifyDataSetChanged();
     }
@@ -58,12 +65,16 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.ViewHolder
             this.ivThumbnail = (ImageView) itemView.findViewById(R.id.ivComic);
 
             //api = (IExtract) activity;
-            //itemView.setOnClickListener(this);
+            itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            //api.saleDetails(purchases.get(getAdapterPosition()), getAdapterPosition());
+            Intent intent = new Intent(context, DetailsActivity_.class);
+            intent.putExtra("result", results.get(getAdapterPosition()));
+            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(context,
+                    Pair.create(v.findViewById(R.id.linearComicRoot), "linearComicRoot"));
+            ActivityCompat.startActivity(context, intent, options.toBundle());
         }
     }
 

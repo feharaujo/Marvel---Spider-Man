@@ -2,4 +2,7 @@
     <string name="app_name">Marvel</string>
     <string name="offline_alert">Não foi possível realizar a busca. Verifique sua conexão e clique na tela para tentar novamente.</string>
     <string name="font_family">sans-serif-light</string>
+    <string name="lbl_publish">Published: </string>
+    <string name="lbl_price">Price: </string>
+    <string name="lbl_pages">Pages: </string>
 </resources>

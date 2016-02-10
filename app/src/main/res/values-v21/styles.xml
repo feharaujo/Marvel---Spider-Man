@@ -21,11 +21,20 @@
 
     <style name="textViewBoldMedium" parent="textViewDefault">
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="textViewBoldLarge" parent="textViewDefault">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="textViewMedium" parent="textViewDefault">
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="textViewLarge" parent="textViewDefault">
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">22sp</item>
     </style>
 
 </resources>

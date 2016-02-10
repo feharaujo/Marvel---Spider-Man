@@ -73,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
         searchComics();
     }
 
+    @Click(R.id.ivProfile)
+    void profile(){
+        ProfileActivity_.intent(MainActivity.this).start();
+    }
+
+
     private void searchComics(){
         rvComics.setVisibility(View.GONE);
         llDisconnected.setVisibility(View.GONE);

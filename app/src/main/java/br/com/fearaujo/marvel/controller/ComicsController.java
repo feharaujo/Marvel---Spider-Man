@@ -8,6 +8,7 @@ import org.androidannotations.annotations.rest.RestService;
 
 import br.com.fearaujo.marvel.model.Response;
 import br.com.fearaujo.marvel.service.ICommunicationService;
+import br.com.fearaujo.marvel.util.Constants;
 import br.com.fearaujo.marvel.view.activity.MainActivity;
 
 @EBean
@@ -24,7 +25,7 @@ public class ComicsController {
     @Background
     public void searchComics(){
         try {
-            Response response = communicationService.getComics();
+            Response response = communicationService.getComics(Constants.API_KEY, Constants.HASH_KEY);
             searchComicsUi(true, response);
         } catch (Exception e){
             searchComicsUi(false, null);
